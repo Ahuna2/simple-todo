@@ -29,6 +29,7 @@ function App() {
           <input
             autoFocus
             placeholder="Type your todo here..."
+            data-test="todo_input"
             value={item}
             onChange={e => setItem(e.target.value)}
             onKeyPress={e => handleKeyPress(e)}
@@ -36,7 +37,7 @@ function App() {
           <button onClick={e => pushToArray(item)}>+</button>
         </div>
 
-        <ol>
+        <ol data-test="todo_list">
           {
             items.map((item, index) => {
               return (
